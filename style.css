@@ -10,9 +10,9 @@ body {
     height: 100vh;
 }
 
-/* 왼쪽 사이드바 */
+/* 왼쪽 사이드바 (1/5 크기) */
 .sidebar {
-    width: 250px;
+    width: 20%;
     background: #fff;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,7 @@ body {
     width: 100%;
 }
 
-/* 메인 콘텐츠 */
+/* 오른쪽 입력 폼 (4/5 크기) */
 .content {
     flex: 1;
     padding: 30px;
@@ -61,11 +61,29 @@ h1 {
     border-radius: 5px;
 }
 
+textarea {
+    height: 100px;
+}
+
+.keyword-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.keyword-box input {
+    width: 32%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 button {
     background: red;
     color: white;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 15px;
 }
 
 button:hover {
