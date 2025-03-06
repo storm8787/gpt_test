@@ -1,3 +1,3 @@
-function generateSpeech() {
-    alert("인사말씀이 생성됩니다!");
+function generateTitle() {
+    alert("보도자료 제목이 생성됩니다!");
 }
