@@ -3,116 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In / Sign Up</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 350px;
-            text-align: center;
-        }
-
-        .tab-container {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-
-        .tab {
-            cursor: pointer;
-            padding: 10px;
-            width: 50%;
-            font-weight: bold;
-            border-bottom: 3px solid transparent;
-        }
-
-        .tab.active {
-            color: #007bff;
-            border-bottom: 3px solid #007bff;
-        }
-
-        .form-container {
-            display: none;
-        }
-
-        .form-container.active {
-            display: block;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #0056b3;
-        }
-    </style>
+    <title>AI 인사말씀 생성기</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <div class="container">
-        <div class="tab-container">
-            <div class="tab active" onclick="showForm('sign-in')">Sign In</div>
-            <div class="tab" onclick="showForm('sign-up')">Sign Up</div>
-        </div>
+        <!-- 왼쪽 사이드바 -->
+        <aside class="sidebar">
+            <h2>📌 애플리케이션 선택</h2>
+            <select>
+                <option>생성형AI 인사말씀 생성기</option>
+            </select>
 
-        <div id="sign-in" class="form-container active">
-            <h2>Sign In</h2>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button>Sign In</button>
-        </div>
+            <h3>AI 모델 선택</h3>
+            <label><input type="radio" name="ai-model" checked> OpenAI GPT-4o</label>
+            <label><input type="radio" name="ai-model"> Google Gemini-2.0</label>
 
-        <div id="sign-up" class="form-container">
-            <h2>Sign Up</h2>
-            <input type="text" placeholder="Full Name">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button>Sign Up</button>
-        </div>
+            <h3>창의성 수준</h3>
+            <input type="range" min="0" max="1" step="0.01" value="0.7">
+        </aside>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="content">
+            <h1>🤖 AI 인사말씀 생성기</h1>
+            <p>필요한 옵션을 선택하고, AI가 맞춤형 인사말씀을 생성해드립니다.</p>
+
+            <div class="form">
+                <label>인사말 성격</label>
+                <select>
+                    <option>개회사</option>
+                    <option>축사</option>
+                    <option>격려사</option>
+                </select>
+
+                <label>연설자 선택</label>
+                <select>
+                    <option>시장</option>
+                    <option>구청장</option>
+                    <option>기관장</option>
+                </select>
+
+                <label>청중 선택</label>
+                <select>
+                    <option>시민</option>
+                    <option>공무원</option>
+                    <option>기업인</option>
+                </select>
+
+                <label>추가 내용</label>
+                <textarea placeholder="축제, 행사, 보고회 명칭 등 필수 전달 내용을 입력하세요."></textarea>
+
+                <button onclick="generateSpeech()">인사말씀 생성하기</button>
+            </div>
+        </main>
     </div>
 
-    <script>
-        function showForm(formType) {
-            document.querySelectorAll('.form-container').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-
-            document.getElementById(formType).classList.add('active');
-            document.querySelector(`.tab[onclick="showForm('${formType}')"]`).classList.add('active');
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
