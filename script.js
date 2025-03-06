@@ -19,7 +19,7 @@ async function generateTitle() {
             "Authorization": `Bearer ${OPENAI_API_KEY}`
         },
         body: JSON.stringify({
-            model: "gpt-4",
+            model: "gpt-4o",
             messages: [{ role: "system", content: prompt }],
             max_tokens: 50,
             n: 1,
