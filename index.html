@@ -49,19 +49,29 @@
                 <button onclick="generateTitle()">보도자료 제목 생성하기</button>
 
                 <!-- 결과 박스 (초기에는 숨김) -->
-                <div id="titleResultBox" class="hidden success-box">
-                    📌 제목이 생성되었습니다.
-                </div>
+               <div id="titleResultBox" class="hidden success-box">
+    📌 제목이 생성되었습니다.
+</div>
 
-                <div id="titleSelectionBox" class="hidden">
-                    <label>제목 선택</label>
-                    <select id="titleOptions">
-                        <option>제목 옵션 1</option>
-                        <option>제목 옵션 2</option>
-                        <option>제목 옵션 3</option>
-                    </select>
-                    <button onclick="generatePressRelease()">보도자료 생성하기</button>
-                </div>
+<!-- 🔹 제목 옵션 표시 (일반 텍스트) -->
+<div id="generatedTitles" class="hidden">
+    <h3>🔹 생성된 제목 옵션</h3>
+    <p id="title1">제목 옵션 1</p>
+    <p id="title2">제목 옵션 2</p>
+    <p id="title3">제목 옵션 3</p>
+</div>
+
+<!-- 🔹 제목 선택 콤보박스 -->
+<div id="titleSelectionBox" class="hidden">
+    <label>제목 선택</label>
+    <select id="titleOptions">
+        <option>제목 옵션 1</option>
+        <option>제목 옵션 2</option>
+        <option>제목 옵션 3</option>
+    </select>
+    <button onclick="generatePressRelease()">보도자료 생성하기</button>
+</div>
+
 
                 <div id="pressReleaseBox" class="hidden success-box">
                     📌 보도자료가 생성되었습니다.
