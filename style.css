@@ -10,16 +10,27 @@ body {
     height: 100vh;
 }
 
-/* 왼쪽 사이드바 */
+/* 기존보다 2/3 크기로 사이드바 줄이기 */
 .sidebar {
-    width: 20%;
+    width: 13%; /* 🔹 기존 20%에서 13%로 줄임 */
     background: #fff;
-    padding: 20px;
+    padding: 15px; /* 🔹 내부 여백도 조정 */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* 🔹 사이드바 내부 요소 크기 조정 */
 .sidebar h2 {
-    font-size: 16px;
+    font-size: 14px; /* 🔹 글자 크기 조정 */
+    text-align: center;
+}
+
+.sidebar select {
+    width: 90%; /* 🔹 프레임 크기에 맞게 너비 조정 */
+    padding: 6px; /* 🔹 콤보박스 높이 축소 */
+    font-size: 14px; /* 🔹 글자 크기 줄임 */
 }
 
 /* 오른쪽 입력 폼 */
