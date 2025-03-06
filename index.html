@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 인사말씀 생성기</title>
+    <title>AI 보도자료 생성기</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
         <aside class="sidebar">
             <h2>📌 애플리케이션 선택</h2>
             <select>
-                <option>생성형AI 인사말씀 생성기</option>
+                <option>AI 보도자료 생성기</option>
             </select>
 
             <h3>AI 모델 선택</h3>
@@ -24,37 +24,36 @@
             <input type="range" min="0" max="1" step="0.01" value="0.7">
         </aside>
 
-        <!-- 메인 콘텐츠 -->
+        <!-- 오른쪽 입력 폼 -->
         <main class="content">
-            <h1>🤖 AI 인사말씀 생성기</h1>
-            <p>필요한 옵션을 선택하고, AI가 맞춤형 인사말씀을 생성해드립니다.</p>
+            <h1>📰 AI 보도자료 생성기</h1>
+            <p>보도자료 스타일을 선택하고 핵심 내용을 입력하세요.</p>
 
             <div class="form">
-                <label>인사말 성격</label>
+                <label>보도자료 스타일</label>
                 <select>
-                    <option>개회사</option>
-                    <option>축사</option>
-                    <option>격려사</option>
+                    <option>Standard</option>
+                    <option>Formal</option>
+                    <option>Casual</option>
+                    <option>Technical</option>
                 </select>
 
-                <label>연설자 선택</label>
-                <select>
-                    <option>시장</option>
-                    <option>구청장</option>
-                    <option>기관장</option>
-                </select>
+                <label>핵심 내용</label>
+                <textarea placeholder="보도자료의 핵심 내용을 입력하세요."></textarea>
 
-                <label>청중 선택</label>
-                <select>
-                    <option>시민</option>
-                    <option>공무원</option>
-                    <option>기업인</option>
-                </select>
+                <label>키워드 (최대 6개)</label>
+                <div class="keyword-box">
+                    <input type="text" placeholder="키워드 1">
+                    <input type="text" placeholder="키워드 2">
+                    <input type="text" placeholder="키워드 3">
+                </div>
+                <div class="keyword-box">
+                    <input type="text" placeholder="키워드 4">
+                    <input type="text" placeholder="키워드 5">
+                    <input type="text" placeholder="키워드 6">
+                </div>
 
-                <label>추가 내용</label>
-                <textarea placeholder="축제, 행사, 보고회 명칭 등 필수 전달 내용을 입력하세요."></textarea>
-
-                <button onclick="generateSpeech()">인사말씀 생성하기</button>
+                <button onclick="generateTitle()">보도자료 제목 생성하기</button>
             </div>
         </main>
     </div>
