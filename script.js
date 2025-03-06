@@ -1,4 +1,4 @@
-const OPENAI_API_KEY = "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"; // 🔹 OpenAI API 키 입력
+const OPENAI_API_KEY = ""; // 🔹 OpenAI API 키 입력
 
 // 🔹 제목 생성 함수 (ChatGPT API 호출)
 async function generateTitle() {
