@@ -1,91 +1,30 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 보도자료 생성기</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!-- 🔹 제목 생성 결과 박스 -->
+<div id="titleResultBox" class="hidden success-box">
+    📌 제목이 생성되었습니다.
+</div>
 
-    <div class="container">
-        <!-- 왼쪽 사이드바 -->
-        <aside class="sidebar">
-            <h2>📌 애플리케이션 선택</h2>
-            <select>
-                <option>AI 보도자료 생성기</option>
-            </select>
-        </aside>
+<!-- 🔹 제목 옵션 표시 -->
+<div id="generatedTitles" class="hidden">
+    <h3>🔹 생성된 제목 옵션</h3>
+    <p id="title1">제목 옵션 1</p>
+    <p id="title2">제목 옵션 2</p>
+    <p id="title3">제목 옵션 3</p>
+</div>
 
-        <!-- 오른쪽 입력 폼 -->
-        <main class="content">
-            <h1>📰 AI 보도자료 생성기</h1>
-            <p>보도자료 스타일을 선택하고 핵심 내용을 입력하세요.</p>
+<!-- 🔹 제목 선택 -->
+<div id="titleSelectionBox" class="hidden">
+    <label>제목 선택</label>
+    <select id="titleOptions"></select>
+    <button onclick="generatePressRelease()">보도자료 생성하기</button>
+</div>
 
-            <div class="form">
-                <label>보도자료 스타일</label>
-                <select>
-                    <option>Standard</option>
-                    <option>Formal</option>
-                    <option>Casual</option>
-                    <option>Technical</option>
-                </select>
+<!-- 🔹 보도자료 생성 결과 -->
+<div id="pressReleaseBox" class="hidden success-box">
+    📌 보도자료가 생성되었습니다.
+</div>
 
-                <label>핵심 내용</label>
-                <textarea id="coreContent" placeholder="보도자료의 핵심 내용을 입력하세요."></textarea>
-
-                <label>키워드 (최대 6개)</label>
-                <div class="keyword-box">
-                    <input type="text" placeholder="키워드 1">
-                    <input type="text" placeholder="키워드 2">
-                    <input type="text" placeholder="키워드 3">
-                </div>
-                <div class="keyword-box">
-                    <input type="text" placeholder="키워드 4">
-                    <input type="text" placeholder="키워드 5">
-                    <input type="text" placeholder="키워드 6">
-                </div>
-
-                <button onclick="generateTitle()">보도자료 제목 생성하기</button>
-
-                <!-- 결과 박스 (초기에는 숨김) -->
-               <div id="titleResultBox" class="hidden success-box">
-                    📌 제목이 생성되었습니다.
-                </div>
-
-                <!-- 🔹 제목 옵션 표시 (일반 텍스트) -->
-                <div id="generatedTitles" class="hidden">
-                    <h3>🔹 생성된 제목 옵션</h3>
-                    <p id="title1">제목 옵션 1</p>
-                    <p id="title2">제목 옵션 2</p>
-                    <p id="title3">제목 옵션 3</p>
-                </div>
-
-                <!-- 🔹 제목 선택 콤보박스 -->
-                <div id="titleSelectionBox" class="hidden">
-                    <label>제목 선택</label>
-                    <select id="titleOptions">
-                        <option>제목 옵션 1</option>
-                        <option>제목 옵션 2</option>
-                        <option>제목 옵션 3</option>
-                    </select>
-                    <button onclick="generatePressRelease()">보도자료 생성하기</button>
-                </div>
-
-
-                <div id="pressReleaseBox" class="hidden success-box">
-                    📌 보도자료가 생성되었습니다.
-                </div>
-
-                <div id="pressReleaseContent" class="hidden result-box">
-                    <h3>생성된 보도자료</h3>
-                    <p id="pressReleaseText">여기에 보도자료 내용이 들어갑니다.</p>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <script src="script.js"></script>
-
-</body>
-</html>
+<!-- 🔹 보도자료 내용 출력 -->
+<div id="pressReleaseContent" class="hidden result-box">
+    <h3>생성된 보도자료</h3>
+    <p id="pressReleaseText">여기에 보도자료 내용이 들어갑니다.</p>
+</div>
