@@ -10,7 +10,7 @@ body {
     height: 100vh;
 }
 
-/* 왼쪽 사이드바 (1/5 크기) */
+/* 왼쪽 사이드바 */
 .sidebar {
     width: 20%;
     background: #fff;
@@ -18,20 +18,11 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar h2, .sidebar h3 {
+.sidebar h2 {
     font-size: 16px;
 }
 
-.sidebar select, .sidebar input {
-    width: 100%;
-    margin: 10px 0;
-}
-
-.sidebar input[type="range"] {
-    width: 100%;
-}
-
-/* 오른쪽 입력 폼 (4/5 크기) */
+/* 오른쪽 입력 폼 */
 .content {
     flex: 1;
     padding: 30px;
@@ -88,4 +79,28 @@ button {
 
 button:hover {
     background: darkred;
+}
+
+/* 결과 박스 */
+.success-box {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.result-box {
+    background: #f8f9fa;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+/* 숨김 스타일 */
+.hidden {
+    display: none;
 }
