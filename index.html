@@ -1,25 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Sign In / Sign Up</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
         }
-        h1 {
-            font-size: 36px;
-            color: #333;
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+            width: 50%;
+            font-weight: bold;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab.active {
+            color: #007bff;
+            border-bottom: 3px solid #007bff;
+        }
+
+        .form-container {
+            display: none;
+        }
+
+        .form-container.active {
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+
+    <div class="container">
+        <div class="tab-container">
+            <div class="tab active" onclick="showForm('sign-in')">Sign In</div>
+            <div class="tab" onclick="showForm('sign-up')">Sign Up</div>
+        </div>
+
+        <div id="sign-in" class="form-container active">
+            <h2>Sign In</h2>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button>Sign In</button>
+        </div>
+
+        <div id="sign-up" class="form-container">
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button>Sign Up</button>
+        </div>
+    </div>
+
+    <script>
+        function showForm(formType) {
+            document.querySelectorAll('.form-container').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+
+            document.getElementById(formType).classList.add('active');
+            document.querySelector(`.tab[onclick="showForm('${formType}')"]`).classList.add('active');
+        }
+    </script>
+
 </body>
 </html>
